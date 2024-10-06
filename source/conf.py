@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Zhengda's Notes"
+project = "Zhengda Notes"
 copyright = '2024, Zhengda He'
 author = 'Zhengda He'
 release = '0.1'
