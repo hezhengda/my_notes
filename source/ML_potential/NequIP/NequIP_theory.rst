@@ -48,7 +48,7 @@ Till now, we have introduced the most important mathematical foundation of NequI
 
 .. _nequip_tutorial:
 
-.. dropdown:: A very good tutorial on representation theory of SO(3)
+.. admonition:: A very good tutorial on representation theory of SO(3)
 
     It also includes a brief introduction about the :code:`e3nn` package.
 
