@@ -1,0 +1,27 @@
+09/23/2024
+===========
+
+.. admonition:: Daily insights
+
+    * Try to play with different training data by using :code:`NequIP` and check the accuracy of the model, try to understand it. Insight can be drawn from Zeyuan Allen-Zhu's paper on probing LLM.
+
+Karpathy's lecture about :code:`llm.c`
+--------------------------------------
+
+.. youtube:: BmdOt6A6tHM
+    :width: 600px
+    :align: center
+
+Here are the notes:
+
+- Even Andrej sometimes has no idea about how to debug.
+
+- What does :code:`PyTorch` provide us (incomplete list): (1) Array (Tensor) (2) Autograd (do not do the backpropagation manually, just let the framework do it) (3) Device (maintain the data between CPU/GPU) (4) Dtype (5) Compile (optimize the performance) (6) Distributed (run muptile process through MPI/NCCL, and PyTorch will do all the synchronization)
+
+- :code:`llm.c` was written near Maldiv, which is when Andrej was taking a vacation.
+
+- Learn how to run :code:`CUDA` is not a very easy task to do, even for Andrej.
+
+- Think about a project, write a prototype, show it online, see whether others like it, and develop the product collaboratively, that's just so cool.
+
+- Maybe using LLM to generate the "specific" code will greatly improve the performance of the code.

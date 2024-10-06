@@ -1,0 +1,13 @@
+09/28/2024
+==========
+
+- Today I got pull over by a police offier in the campus, luckily nothing really happens. But I need to renew my driver license and car registration in the DMV. I have booked an appointment on next Monday to go to DMV, but I need to get all the paper works ready before that. 
+
+- ✅ Start working on cleaning the code for the aqueous stability project. (10:16AM - 12:52PM)
+
+- Writing the technical report of the aqueous stability project. (think about the structure and logic of the report, why other people would want to read it, what contribution do you make through this project?)
+
+.. admonition:: Tips (How to insert figure to word while make it look nice)
+
+    I can directly copy the figure from powerpoint and paste it to the word document as "TIFF" format, which will show nicely in both word and finder. 
+

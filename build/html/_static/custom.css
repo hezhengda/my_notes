@@ -1,0 +1,15 @@
+/* Enable code wrapping for code blocks */
+.highlight pre {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow-x: auto;
+}
+
+/* Additional rule to handle inline code */
+.highlight code {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow-x: auto;
+}

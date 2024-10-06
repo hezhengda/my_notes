@@ -1,0 +1,8 @@
+09/24/2024
+===========
+
+- I need to think about how to investigate large datasets of high-entropy alloy surfaces. What analysis can be done to understand the data? I need to read more papers to see what are the common analyses done in this field, and maybe I can make the analysis automated.
+
+- Test whether the training speed will increase if I have deleted :code:`--rdzv-backend=c10d` in the submission script. It seems like it does not affect the training speed.
+
+- Tomorrow I will write the code for pourbaix diagram, I need to make sure that the code is very clean and easy to understand. Keep refactoring the code and make it more and more clean.

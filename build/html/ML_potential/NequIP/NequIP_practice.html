@@ -1,0 +1,1113 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Practical use of NequIP &#8212; Zhengda&#39;s Notes 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=23995236" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ML_potential/NequIP/NequIP_practice';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Test of NequIP" href="NequIP_test.html" />
+    <link rel="prev" title="Theoretical background of NequIP" href="NequIP_theory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Zhengda's Notes 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../learning_notes/index.html">Learning Notes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../learning_notes/machine_learning.html">Concepts in Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning_notes/linux.html">Useful commands on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning_notes/youtube_uni.html">Youtube as a university</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning_notes/scientific_writing.html">Scientific writing and research methodology</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Machine learning potential</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="NequIP.html">NequIP</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="NequIP_theory.html">Theoretical background of NequIP</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Practical use of NequIP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NequIP_test.html">Test of NequIP</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../MatGL/MatGL.html">MatGL</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../MatGL/MatGL_theory.html">Theoretical foundation of M3GNET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../MatGL/MatGL_practice.html">Practical applications of MatGL</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathematics/index.html">Wonder garden of mathematics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Treatise of computational chemistry</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../my_book/index.html">Treatise of computational chemistry</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ML_potential/NequIP/NequIP_practice.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Practical use of NequIP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-nequip">Install NequIP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-for-an-interactive-mode-on-supercomputer">Apply for an interactive mode on supercomputer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-training-data-for-nequip">Generating training data for NequIP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-the-config-file">Modify the config file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-nequip-model">Training a NequIP model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-one-gpu">Using one GPU</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-multiple-gpus">Using multiple GPUs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#job-script-on-perlmutter">Job script on Perlmutter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#job-script-on-kestrel">Job script on Kestrel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-scripts-for-generating-input-files-for-nequip">Useful scripts for generating input files for NequIP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-the-trained-model">Deploy the trained model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-the-trained-model">Evaluate the trained model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-errors-and-how-to-fix-them">Common errors and how to fix them</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="practical-use-of-nequip">
+<h1>Practical use of NequIP<a class="headerlink" href="#practical-use-of-nequip" title="Link to this heading">#</a></h1>
+<section id="install-nequip">
+<h2>Install NequIP<a class="headerlink" href="#install-nequip" title="Link to this heading">#</a></h2>
+<p>By following the commands below, you should be able to install NequIP on your local machine or HPC (e.g. Kestrel from NREL).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>anaconda3
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>nequip<span class="w"> </span>python
+conda<span class="w"> </span>activate<span class="w"> </span>nequip
+pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu124<span class="w"> </span><span class="c1"># for CUDA 12.4</span>
+pip3<span class="w"> </span>install<span class="w"> </span>wandb<span class="w"> </span><span class="c1"># for visualizing the training process</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mir-group/nequip.git
+<span class="nb">cd</span><span class="w"> </span>nequip<span class="p">;</span><span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p>In order to test whether the installation is successful, we can run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>nequip
+nequip-train<span class="w"> </span>config/minimal.yaml
+</pre></div>
+</div>
+<p>If the installation is successful, you should see the following output:</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/nequip_success.png"><img alt="../../_images/nequip_success.png" src="../../_images/nequip_success.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">If you get similar outputs as above, the installation is successful.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="apply-for-an-interactive-mode-on-supercomputer">
+<h2>Apply for an interactive mode on supercomputer<a class="headerlink" href="#apply-for-an-interactive-mode-on-supercomputer" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perlmutter</span>
+salloc<span class="w"> </span>--nodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--qos<span class="w"> </span>interactive<span class="w"> </span>--time<span class="w"> </span><span class="m">04</span>:00:00<span class="w"> </span>--constraint<span class="w"> </span>gpu<span class="w"> </span>--gpus<span class="w"> </span><span class="m">4</span><span class="w"> </span>--account<span class="w"> </span>m4238_g
+salloc<span class="w"> </span>--nodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--qos<span class="w"> </span>interactive<span class="w"> </span>--time<span class="w"> </span><span class="m">04</span>:00:00<span class="w"> </span>--constraint<span class="w"> </span>gpu<span class="w"> </span>--gpus<span class="w"> </span><span class="m">8</span><span class="w"> </span>--account<span class="w"> </span>m4238_g<span class="w"> </span>--exclusive
+
+<span class="c1"># Kestrel</span>
+salloc<span class="w"> </span>--nodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--account<span class="o">=</span>cmos<span class="w"> </span>--time<span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>--gres<span class="o">=</span>gpu:4<span class="w"> </span>--mem-per-gpu<span class="o">=</span>80G
+salloc<span class="w"> </span>--nodes<span class="w"> </span><span class="m">2</span><span class="w"> </span>--account<span class="o">=</span>cmos<span class="w"> </span>--time<span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>--gres<span class="o">=</span>gpu:8<span class="w"> </span>--mem-per-gpu<span class="o">=</span>80G
+</pre></div>
+</div>
+</section>
+<section id="generating-training-data-for-nequip">
+<h2>Generating training data for NequIP<a class="headerlink" href="#generating-training-data-for-nequip" title="Link to this heading">#</a></h2>
+<p>Here’s the script (<code class="code docutils literal notranslate"><span class="pre">extract_ase_split.py</span></code>) for generating training data for NequIP.</p>
+<p>It’s usage is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">extract_ase_split</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="o">--</span><span class="n">n_jobs</span> <span class="mi">10000</span> <span class="o">--</span><span class="n">conv_jobs_file</span> <span class="n">convJobs_Relax</span><span class="o">.</span><span class="n">mson</span> <span class="o">--</span><span class="n">split</span> <span class="mf">0.8</span> <span class="mf">0.1</span> <span class="mf">0.1</span>
+<span class="c1"># -n 10: use 10 cores for parallel processing</span>
+<span class="c1"># --n_jobs 10000: process 10000 jobs</span>
+<span class="c1"># --conv_jobs_file convJobs_Relax.mson: the file that contains the location of converged jobs</span>
+<span class="c1"># --split 0.8 0.1 0.1: split the data into 80% training, 10% validation, 10% test</span>
+</pre></div>
+</div>
+<p>Here’s the script for generating training data for NequIP.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+<span class="kn">from</span> <span class="nn">monty.serialization</span> <span class="kn">import</span> <span class="n">loadfn</span><span class="p">,</span> <span class="n">dumpfn</span>
+<span class="kn">from</span> <span class="nn">pymatgen.core.periodic_table</span> <span class="kn">import</span> <span class="n">Element</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span><span class="p">,</span> <span class="n">write</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">process_job</span><span class="p">(</span><span class="n">job</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;vasprun.xml.xz&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;xz --decompress vasprun.xml.xz&#39;</span><span class="p">)</span>
+        <span class="n">lst_structures</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;vasprun.xml&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span> <span class="c1"># index=&#39;:&#39; to read all structures</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;xz vasprun.xml&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Extract unique elements from the atoms object</span>
+        <span class="n">unique_elements</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">lst_structures</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_chemical_symbols</span><span class="p">()))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+    <span class="k">return</span> <span class="n">lst_structures</span><span class="p">,</span> <span class="n">unique_elements</span>
+
+<span class="k">def</span> <span class="nf">collect_unique_elements</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+    <span class="n">all_elements</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">elements</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">all_elements</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">all_elements</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">Element</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">Z</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Extract ASE structures in parallel.&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;--num_cores&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Number of cores to use&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--n_jobs&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Number of jobs to process&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--conv_jobs_file&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;convJobs_Relax.mson&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Filename of conv_jobs&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--split&quot;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Split ratio for training, validation, and test sets&quot;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="c1"># Ensure split ratios sum to 1</span>
+    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">split</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Split ratios must sum to 1&quot;</span><span class="p">)</span>
+
+    <span class="n">currloc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">ase_structures_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">currloc</span><span class="si">}</span><span class="s1">/ase_structures&#39;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ase_structures_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">all_conv_jobs</span> <span class="o">=</span> <span class="n">loadfn</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">currloc</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">conv_jobs_file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">shuffle</span><span class="p">(</span><span class="n">all_conv_jobs</span><span class="p">)</span> <span class="c1"># shuffle the jobs to avoid bias</span>
+    <span class="n">n_jobs</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_conv_jobs</span><span class="p">))</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">n_jobs</span> <span class="k">else</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_conv_jobs</span><span class="p">)</span>
+    <span class="n">conv_jobs</span> <span class="o">=</span> <span class="n">all_conv_jobs</span><span class="p">[:</span><span class="n">n_jobs</span><span class="p">]</span>
+
+    <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num_cores</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">process_job</span><span class="p">,</span> <span class="n">conv_jobs</span><span class="p">)</span>
+
+    <span class="c1"># Collect all good structures</span>
+    <span class="n">all_structures</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">for</span> <span class="n">struct</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">forces</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">get_forces</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">forces</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">all_structures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">struct</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+    <span class="c1"># Shuffle all structures</span>
+    <span class="n">shuffle</span><span class="p">(</span><span class="n">all_structures</span><span class="p">)</span>
+
+    <span class="c1"># Split structures based on the provided ratios</span>
+    <span class="n">total_structures</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_structures</span><span class="p">)</span>
+    <span class="n">split_indices</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ratio</span> <span class="o">*</span> <span class="n">total_structures</span><span class="p">)</span> <span class="k">for</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">split</span><span class="p">]</span>
+
+    <span class="n">train_structures</span> <span class="o">=</span> <span class="n">all_structures</span><span class="p">[:</span><span class="n">split_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="n">val_structures</span> <span class="o">=</span> <span class="n">all_structures</span><span class="p">[</span><span class="n">split_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">split_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">split_indices</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">test_structures</span> <span class="o">=</span> <span class="n">all_structures</span><span class="p">[</span><span class="n">split_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">split_indices</span><span class="p">[</span><span class="mi">1</span><span class="p">]:]</span>
+
+    <span class="c1"># Collect unique elements</span>
+    <span class="n">unique_elements</span> <span class="o">=</span> <span class="n">collect_unique_elements</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+    <span class="c1"># Write structures to files</span>
+    <span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ase_structures_dir</span><span class="si">}</span><span class="s1">/training.xyz&#39;</span><span class="p">,</span> <span class="n">train_structures</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;extxyz&#39;</span><span class="p">)</span>
+    <span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ase_structures_dir</span><span class="si">}</span><span class="s1">/validation.xyz&#39;</span><span class="p">,</span> <span class="n">val_structures</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;extxyz&#39;</span><span class="p">)</span>
+    <span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ase_structures_dir</span><span class="si">}</span><span class="s1">/test.xyz&#39;</span><span class="p">,</span> <span class="n">test_structures</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;extxyz&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Save unique elements to a .mson file</span>
+    <span class="n">dumpfn</span><span class="p">(</span><span class="n">unique_elements</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ase_structures_dir</span><span class="si">}</span><span class="s1">/unique_elements.mson&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unique elements: </span><span class="si">{</span><span class="n">unique_elements</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_structures</span><span class="p">)</span><span class="si">}</span><span class="s2"> training structures&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">val_structures</span><span class="p">)</span><span class="si">}</span><span class="s2"> validation structures&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_structures</span><span class="p">)</span><span class="si">}</span><span class="s2"> test structures&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After the splitting of the DFT results, you will find <code class="code docutils literal notranslate"><span class="pre">training.xyz</span></code>, <code class="code docutils literal notranslate"><span class="pre">validation.xyz</span></code>, <code class="code docutils literal notranslate"><span class="pre">test.xyz</span></code> in the directory <code class="code docutils literal notranslate"><span class="pre">ase_structures/</span></code>. You can easily change the location by adding additional arguments to the script.</p>
+</section>
+<section id="modify-the-config-file">
+<h2>Modify the config file<a class="headerlink" href="#modify-the-config-file" title="Link to this heading">#</a></h2>
+<p>We need a config file for training NequIP model. There are several examples given in the git repo, so in here we only need to show how to change its parameters using python.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">monty.serialization</span> <span class="kn">import</span> <span class="n">loadfn</span>
+
+<span class="c1"># read yaml file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># change some parameters</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;root&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">currloc</span><span class="si">}</span><span class="s1">/scaling_test_nequip/num_gpu_</span><span class="si">{</span><span class="n">num_gpu</span><span class="si">}</span><span class="s1">/test_</span><span class="si">{</span><span class="n">num_gpu</span><span class="si">}</span><span class="s1">_gpu&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;run_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;run_folder_</span><span class="si">{</span><span class="n">num_gpu</span><span class="si">}</span><span class="s1">_gpu&#39;</span> <span class="c1"># folder name of current run</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;dataset_file_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">currloc</span><span class="si">}</span><span class="s1">/scaling_test_nequip/dataset/input.xyz&#39;</span>
+<span class="n">ele_lst</span> <span class="o">=</span> <span class="n">loadfn</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;../dataset/unique_elements.mson&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;chemical_symbols&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ele_lst</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;max_epochs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;wandb_project&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;scaling_test_nequip&#39;</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;n_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_train</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;n_val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_validation</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">num_gpu</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;validation_batch_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">num_gpu</span>
+
+<span class="c1"># dump yaml file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;my_dump.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># sort_keys=False will prevent the reordering of the keys</span>
+
+<span class="c1"># one caveat would be after the modification, all the comments will be removed, which will be much more cleaner.</span>
+</pre></div>
+</div>
+<p>Since NequIP uses <code class="code docutils literal notranslate"><span class="pre">DistributedDataParallel</span></code>, which means different GPUs will handle different batches, so we need to make the batch size larger so that it can be distributed evenly on different GPUs.</p>
+</section>
+<section id="training-a-nequip-model">
+<h2>Training a NequIP model<a class="headerlink" href="#training-a-nequip-model" title="Link to this heading">#</a></h2>
+<section id="using-one-gpu">
+<h3>Using one GPU<a class="headerlink" href="#using-one-gpu" title="Link to this heading">#</a></h3>
+<p>Here’s the script for training a NequIP model.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nequip-train<span class="w"> </span>config/your_config.yaml
+</pre></div>
+</div>
+<p>After successful training, you will get <code class="code docutils literal notranslate"><span class="pre">best_model.pth</span></code> in the directory <code class="code docutils literal notranslate"><span class="pre">results/</span></code>.</p>
+</section>
+<section id="using-multiple-gpus">
+<h3>Using multiple GPUs<a class="headerlink" href="#using-multiple-gpus" title="Link to this heading">#</a></h3>
+<p>You can download the <code class="code docutils literal notranslate"><span class="pre">ddp</span></code> branch (<code class="code docutils literal notranslate"><span class="pre">ddp</span></code> means distributed data parallel, which is partition the data, when training a really large model, the model can also be partitioned into multiple GPUs) from the NequIP <a class="reference external" href="https://github.com/mir-group/nequip.git">github repo</a> and also download the <code class="code docutils literal notranslate"><span class="pre">state-reduce</span></code> branch from <a class="reference external" href="https://github.com/mir-group/pytorch_runstats.git">pytorch_runstats package</a> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>ddp<span class="w"> </span>https://github.com/mir-group/nequip.git
+git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>state-reduce<span class="w"> </span>https://github.com/mir-group/pytorch_runstats.git
+</pre></div>
+</div>
+<p>Then install the package with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install nequip</span>
+<span class="nb">cd</span><span class="w"> </span>nequip
+pip3<span class="w"> </span>install<span class="w"> </span>.
+
+<span class="c1"># install pytorch_runstats</span>
+<span class="nb">cd</span><span class="w"> </span>../pytorch_runstats
+pip3<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p>Then you can use the following command to train the model with multiple GPUs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">32</span>
+nohup<span class="w"> </span>torchrun<span class="w"> </span>--nnodes<span class="w"> </span><span class="m">1</span><span class="w"> </span>--nproc_per_node<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="sb">`</span>which<span class="w"> </span>nequip-train<span class="sb">`</span><span class="w"> </span>config/IM_surf_4096.yaml<span class="w"> </span>--distributed<span class="w"> </span>&gt;<span class="w"> </span>nequip.log<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>Also you need to make sure that <code class="code docutils literal notranslate"><span class="pre">batch_size</span></code>, <code class="code docutils literal notranslate"><span class="pre">validation_batch_size</span></code>, <code class="code docutils literal notranslate"><span class="pre">n_train</span></code>, <code class="code docutils literal notranslate"><span class="pre">n_val</span></code> are all divisible by the number of GPUs you are using.</p>
+<p>There is a very detailed discussion in this issue: <a class="reference external" href="https://github.com/mir-group/nequip/issues/210">here</a>.</p>
+<p>I have tested the code with 4 GPUs on Perlmutter, and here’s the results:</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/nequip_multiGPU.png"><img alt="../../_images/nequip_multiGPU.png" src="../../_images/nequip_multiGPU.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Training NequIP with 4 GPUs (A100-40GB) on Perlmutter. You can see all four GPUs are utilized.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When using multiple GPUs, the connection to wandb will be strange, since all GPUs will try to push the data to wandb server. Right now it seems there is no good solution to this problem.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On <code class="code docutils literal notranslate"><span class="pre">Kestrel</span></code>, the multi_GPU version of NequIP cannot be run, it will show the following error:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>torch.distributed.DistBackendError:<span class="w"> </span><span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span>is<span class="w"> </span>setting<span class="w"> </span>up<span class="w"> </span>NCCL<span class="w"> </span>communicator<span class="w"> </span>and<span class="w"> </span>retrieving<span class="w"> </span>ncclUniqueId<span class="w"> </span>from<span class="w"> </span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span>via<span class="w"> </span>c10d<span class="w"> </span>key-value<span class="w"> </span>store<span class="w"> </span>by<span class="w"> </span>key<span class="w"> </span><span class="s1">&#39;0&#39;</span>,<span class="w"> </span>but<span class="w"> </span>store-&gt;get<span class="o">(</span><span class="s1">&#39;0&#39;</span><span class="o">)</span><span class="w"> </span>got<span class="w"> </span>error:<span class="w"> </span>Socket<span class="w"> </span>Timeout
+</pre></div>
+</div>
+<p>But surprisingly, if we are using the interactive node mode (<code class="code docutils literal notranslate"><span class="pre">salloc</span></code>), the multi-GPU code can run successfully. Still don’t know what’s the reason.</p>
+<p>2024/09/21 - 17:53 I got the reason, I need to add <code class="code docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--exclusive</span></code> in the job script, then the multi-GPU code can run successfully.</p>
+</div>
+<section id="job-script-on-perlmutter">
+<h4>Job script on Perlmutter<a class="headerlink" href="#job-script-on-perlmutter" title="Link to this heading">#</a></h4>
+<p>Here is the job submission script for using NequIP on Perlmutter (NERSC) supercomputer with multiple nodes. I have consulted with NERSC help team and <code class="code docutils literal notranslate"><span class="pre">Steve</span></code> is very helpful. He has a good repo about how to run PyTorch on Perlmutter: <a class="reference external" href="https://github.com/sparticlesteve/nersc-pytorch-testing/tree/main/scripts">here</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=nequip</span>
+<span class="c1">#SBATCH --error=%J.err</span>
+<span class="c1">#SBATCH --output=%J.out</span>
+<span class="c1">#SBATCH --nodes=2</span>
+<span class="c1">#SBATCH --time=48:00:00</span>
+<span class="c1">#SBATCH --account=m4238_g</span>
+<span class="c1">#SBATCH --constraint=gpu</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --cpus-per-task=128</span>
+<span class="c1">#SBATCH --gpus-per-node=4</span>
+<span class="c1">#SBATCH --qos=regular</span>
+<span class="c1">#SBATCH --exclusive</span>
+
+module<span class="w"> </span>load<span class="w"> </span>python/3.9-anaconda-2021.11
+conda<span class="w"> </span>init
+conda<span class="w"> </span>activate<span class="w"> </span>hzd_mlp<span class="w"> </span><span class="c1"># your conda environment</span>
+<span class="c1">#module load pytorch/2.3.1</span>
+module<span class="w"> </span>load<span class="w"> </span>nccl/2.17.1-ofi
+<span class="c1">#module load nccl</span>
+
+<span class="c1">#export OMP_NUM_THREADS=128</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29507</span>
+
+<span class="c1"># copied from Steve&#39;s github: https://github.com/sparticlesteve/nersc-pytorch-testing/blob/main/scripts/run_ddp_launch_test.sh</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+date
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PyTorch distributed launch DDP test&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cluster: </span><span class="nv">$SLURM_CLUSTER_NAME</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Nodes: </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tasks/node: </span><span class="nv">$SLURM_NTASKS_PER_NODE</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Image: </span><span class="nv">$SLURM_SPANK_SHIFTER_IMAGEREQUEST</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Extra args: </span><span class="nv">$@</span><span class="s2">&quot;</span>
+module<span class="w"> </span>list
+
+srun<span class="w"> </span>torchrun<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--nnodes<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--nproc-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--rdzv-backend<span class="o">=</span>c10d<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--rdzv-endpoint<span class="o">=</span><span class="nv">$MASTER_ADDR</span>:<span class="nv">$MASTER_PORT</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="sb">`</span>which<span class="w"> </span>nequip-train<span class="sb">`</span><span class="w"> </span>run.yaml<span class="w"> </span>--gpu<span class="w"> </span>--distributed
+</pre></div>
+</div>
+</section>
+<section id="job-script-on-kestrel">
+<h4>Job script on Kestrel<a class="headerlink" href="#job-script-on-kestrel" title="Link to this heading">#</a></h4>
+<p>Here is the job submission script for using NequIP on Kestrel (NREL) supercomputer.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=nequip</span>
+<span class="c1">#SBATCH --error=%J.err</span>
+<span class="c1">#SBATCH --output=%J.out</span>
+<span class="c1">#SBATCH --nodes=2</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --cpus-per-task=104</span>
+<span class="c1">#SBATCH --time=48:00:00</span>
+<span class="c1">#SBATCH --partition=gpu-h100</span>
+<span class="c1">#SBATCH --account=cmos</span>
+<span class="c1">#SBATCH --gpus-per-node=4</span>
+
+module<span class="w"> </span>load<span class="w"> </span>anaconda3
+conda<span class="w"> </span>init
+conda<span class="w"> </span>activate<span class="w"> </span>pyhzd
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_ADDR</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MASTER_PORT</span><span class="o">=</span><span class="m">29507</span><span class="w"> </span><span class="c1"># just a random number that is not been used</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+date
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PyTorch distributed launch DDP test&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cluster: </span><span class="nv">$SLURM_CLUSTER_NAME</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Nodes: </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tasks/node: </span><span class="nv">$SLURM_NTASKS_PER_NODE</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Image: </span><span class="nv">$SLURM_SPANK_SHIFTER_IMAGEREQUEST</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Extra args: </span><span class="nv">$@</span><span class="s2">&quot;</span>
+module<span class="w"> </span>list
+
+<span class="nv">NCCL_DEBUG</span><span class="o">=</span>INFO<span class="w"> </span>srun<span class="w"> </span>torchrun<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--nnodes<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--nproc-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--rdzv-backend<span class="o">=</span>c10d<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--rdzv-endpoint<span class="o">=</span><span class="nv">$MASTER_ADDR</span>:<span class="nv">$MASTER_PORT</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="sb">`</span>which<span class="w"> </span>nequip-train<span class="sb">`</span><span class="w"> </span>run.yaml<span class="w"> </span>--gpu<span class="w"> </span>--distributed
+</pre></div>
+</div>
+</section>
+<section id="useful-scripts-for-generating-input-files-for-nequip">
+<h4>Useful scripts for generating input files for NequIP<a class="headerlink" href="#useful-scripts-for-generating-input-files-for-nequip" title="Link to this heading">#</a></h4>
+<p>I also have two scripts for generating input files for NequIP. One is called <code class="code docutils literal notranslate"><span class="pre">run_nequip_multiGPU.py</span></code>, the other one is called <code class="code docutils literal notranslate"><span class="pre">nequip.sh</span></code>, which is a shell script for running the python script. Here they are:</p>
+<div class="admonition-run-nequip-multigpu-py admonition">
+<p class="admonition-title">run_nequip_multiGPU.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="c1"># Author: Zhengda He</span>
+<span class="c1"># Date: 2023-10-05</span>
+<span class="c1">#</span>
+<span class="c1"># This script is designed to run NequIP with multiple GPUs on different clusters.</span>
+<span class="c1"># It generates a submission script based on the specified cluster and submits the job.</span>
+<span class="c1">#</span>
+<span class="c1"># Usage:</span>
+<span class="c1">#     python run_nequip_multiGPU.py --database_path &lt;path_to_database&gt; --config_template &lt;config_template_file&gt;</span>
+<span class="c1">#                                   --num_gpu &lt;number_of_gpus&gt; --num_nodes &lt;number_of_nodes&gt;</span>
+<span class="c1">#                                   --wandb_project_name &lt;wandb_project_name&gt; --cluster_name &lt;cluster_name&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># Arguments:</span>
+<span class="c1">#     --database_path: Path to the database.</span>
+<span class="c1">#     --config_template: Name of the config template file.</span>
+<span class="c1">#     --num_gpu: Number of GPUs to use, default is 1.</span>
+<span class="c1">#     --num_nodes: Number of nodes to use, default is 1.</span>
+<span class="c1">#     --wandb_project_name: Name of the wandb project.</span>
+<span class="c1">#     --cluster_name: Name of the cluster (e.g., perlmutter, kestrel).</span>
+<span class="c1">#</span>
+<span class="c1"># Example:</span>
+<span class="c1">#     python run_nequip_multiGPU.py --database_path /path/to/database --config_template config.yaml --num_gpu 4 --num_nodes 2 --wandb_project_name my_project --cluster_name perlmutter</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">monty.serialization</span> <span class="kn">import</span> <span class="n">loadfn</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="k">def</span> <span class="nf">generate_submission_script</span><span class="p">(</span><span class="n">cluster_name</span><span class="p">,</span> <span class="n">num_nodes</span><span class="p">,</span> <span class="n">num_gpu</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cluster_name</span> <span class="o">==</span> <span class="s1">&#39;perlmutter&#39;</span><span class="p">:</span>
+        <span class="n">script</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;#!/bin/bash</span>
+<span class="s2">#SBATCH --job-name=nequip</span>
+<span class="s2">#SBATCH --error=%J.err</span>
+<span class="s2">#SBATCH --output=%J.out</span>
+<span class="s2">#SBATCH --nodes=</span><span class="si">{</span><span class="n">num_nodes</span><span class="si">}</span>
+<span class="s2">#SBATCH --ntasks-per-node=1</span>
+<span class="s2">#SBATCH --cpus-per-task=128</span>
+<span class="s2">#SBATCH --time=48:00:00</span>
+<span class="s2">#SBATCH --account=m4238_g</span>
+<span class="s2">#SBATCH --constraint=gpu</span>
+<span class="s2">#SBATCH --gpus-per-node=</span><span class="si">{</span><span class="n">num_gpu</span><span class="si">}</span>
+<span class="s2">#SBATCH --qos=regular</span>
+
+<span class="s2">module load python/3.9-anaconda-2021.11</span>
+<span class="s2">conda init</span>
+<span class="s2">conda activate hzd_mlp # your conda environment</span>
+<span class="s2">module load nccl/2.17.1-ofi</span>
+
+<span class="s2">export MASTER_ADDR=$(hostname)</span>
+<span class="s2">export MASTER_PORT=29507 # just a random number that is not been used</span>
+
+<span class="s2">echo &quot;---------------------------------------------------------------&quot;</span>
+<span class="s2">date</span>
+<span class="s2">echo &quot;PyTorch distributed launch DDP test&quot;</span>
+<span class="s2">echo &quot;Cluster: $SLURM_CLUSTER_NAME&quot;</span>
+<span class="s2">echo &quot;Nodes: $SLURM_JOB_NODELIST&quot;</span>
+<span class="s2">echo &quot;Tasks/node: $SLURM_NTASKS_PER_NODE&quot;</span>
+<span class="s2">echo &quot;Image: $SLURM_SPANK_SHIFTER_IMAGEREQUEST&quot;</span>
+<span class="s2">echo &quot;Extra args: $@&quot;</span>
+<span class="s2">module list</span>
+
+<span class="s2">NCCL_DEBUG=INFO srun torchrun </span><span class="se">\\</span>
+<span class="s2">    --nnodes=</span><span class="si">{</span><span class="n">num_nodes</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span>
+<span class="s2">    --nproc-per-node=</span><span class="si">{</span><span class="n">num_gpu</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span>
+<span class="s2">    --rdzv-backend=c10d </span><span class="se">\\</span>
+<span class="s2">    --rdzv-endpoint=$MASTER_ADDR:$MASTER_PORT </span><span class="se">\\</span>
+<span class="s2">    `which nequip-train` run.yaml --gpu --distributed</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">cluster_name</span> <span class="o">==</span> <span class="s1">&#39;kestrel&#39;</span><span class="p">:</span>
+        <span class="n">script</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;#!/bin/bash</span>
+<span class="s2">#SBATCH --job-name=nequip</span>
+<span class="s2">#SBATCH --error=%J.err</span>
+<span class="s2">#SBATCH --output=%J.out</span>
+<span class="s2">#SBATCH --nodes=</span><span class="si">{</span><span class="n">num_nodes</span><span class="si">}</span>
+<span class="s2">#SBATCH --ntasks-per-node=1</span>
+<span class="s2">#SBATCH --cpus-per-task=104</span>
+<span class="s2">#SBATCH --time=48:00:00</span>
+<span class="s2">#SBATCH --partition=gpu-h100</span>
+<span class="s2">#SBATCH --account=cmos</span>
+<span class="s2">#SBATCH --gpus-per-node=</span><span class="si">{</span><span class="n">num_gpu</span><span class="si">}</span>
+
+<span class="s2">module load anaconda3</span>
+<span class="s2">conda init</span>
+<span class="s2">conda activate pyhzd</span>
+
+<span class="s2">export MASTER_ADDR=$(hostname)</span>
+<span class="s2">export MASTER_PORT=29507 # just a random number that is not been used</span>
+
+<span class="s2">echo &quot;---------------------------------------------------------------&quot;</span>
+<span class="s2">date</span>
+<span class="s2">echo &quot;PyTorch distributed launch DDP test&quot;</span>
+<span class="s2">echo &quot;Cluster: $SLURM_CLUSTER_NAME&quot;</span>
+<span class="s2">echo &quot;Nodes: $SLURM_JOB_NODELIST&quot;</span>
+<span class="s2">echo &quot;Tasks/node: $SLURM_NTASKS_PER_NODE&quot;</span>
+<span class="s2">echo &quot;Image: $SLURM_SPANK_SHIFTER_IMAGEREQUEST&quot;</span>
+<span class="s2">echo &quot;Extra args: $@&quot;</span>
+<span class="s2">module list</span>
+
+<span class="s2">NCCL_DEBUG=INFO srun torchrun </span><span class="se">\\</span>
+<span class="s2">    --nnodes=</span><span class="si">{</span><span class="n">num_nodes</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span>
+<span class="s2">    --nproc-per-node=</span><span class="si">{</span><span class="n">num_gpu</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span>
+<span class="s2">    --rdzv-backend=c10d </span><span class="se">\\</span>
+<span class="s2">    --rdzv-endpoint=$MASTER_ADDR:$MASTER_PORT </span><span class="se">\\</span>
+<span class="s2">    `which nequip-train` run.yaml --gpu --distributed</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported cluster: </span><span class="si">{</span><span class="n">cluster_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;job_nequip_</span><span class="si">{</span><span class="n">cluster_name</span><span class="si">}</span><span class="s1">.sh&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Submission script for </span><span class="si">{</span><span class="n">cluster_name</span><span class="si">}</span><span class="s1"> generated as job_nequip_</span><span class="si">{</span><span class="n">cluster_name</span><span class="si">}</span><span class="s1">.sh&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">currloc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;OMP_NUM_THREADS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;32&#39;</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Run NequIP with multiple GPUs&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--database_path&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to the database&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--config_template&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Name of the config template file&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_gpu&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Number of GPUs to use, default is 1&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_nodes&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Number of nodes to use, default is 1&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--wandb_project_name&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Name of the wandb project&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cluster_name&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Name of the cluster (e.g., perlmutter, kestrel)&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">database_path</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">database_path</span>
+    <span class="n">config_template</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">config_template</span>
+    <span class="n">num_gpu</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">num_gpu</span>
+    <span class="n">num_nodes</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">num_nodes</span>
+    <span class="n">cluster_name</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">cluster_name</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current location: </span><span class="si">{</span><span class="n">currloc</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Database path: </span><span class="si">{</span><span class="n">database_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Checking if input.xyz is exist in dataset folder.&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">database_path</span><span class="p">)</span>
+    <span class="c1"># if input.xyz is not exist, we need to combine train.xyz and validation.xyz</span>
+    <span class="k">if</span> <span class="s1">&#39;input.xyz&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
+        <span class="n">lst_train</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;training.xyz&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+        <span class="n">lst_validation</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;validation.xyz&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input.xyz is not exist, combining training.xyz and validation.xyz&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;cat training.xyz validation.xyz &gt; input.xyz&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">lst_train</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;training.xyz&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;extxyz&#39;</span><span class="p">)</span>
+        <span class="n">lst_validation</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;validation.xyz&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;extxyz&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;input.xyz exists&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">currloc</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Copying template config file to current directory&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;cp </span><span class="si">{</span><span class="n">config_template</span><span class="si">}</span><span class="s1"> ./template.yaml&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Modifying template.yaml file&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># read yaml file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;template.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="c1"># set number of train and validation data</span>
+    <span class="n">num_train</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">)</span><span class="o">/</span><span class="n">num_gpu</span><span class="p">)</span> <span class="o">*</span> <span class="n">num_gpu</span>
+    <span class="n">num_validation</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_validation</span><span class="p">)</span><span class="o">/</span><span class="n">num_gpu</span><span class="p">)</span> <span class="o">*</span> <span class="n">num_gpu</span>
+
+    <span class="c1"># change some parameters</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;root&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">currloc</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;run_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;output&#39;</span> <span class="c1"># folder name of current run</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;dataset_file_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">database_path</span><span class="si">}</span><span class="s1">/input.xyz&#39;</span>
+    <span class="n">ele_lst</span> <span class="o">=</span> <span class="n">loadfn</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">database_path</span><span class="si">}</span><span class="s1">/unique_elements.mson&#39;</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;chemical_symbols&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ele_lst</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;max_epochs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100000</span> <span class="c1"># we can do early stopping based on validation loss</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;wandb_project&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">wandb_project_name</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;n_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_train</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;n_val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_validation</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">num_gpu</span> <span class="o">*</span> <span class="n">num_nodes</span> <span class="c1"># this needs to be tested on the GPU to make sure we have enough memory</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;validation_batch_size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">*</span> <span class="n">num_gpu</span> <span class="o">*</span> <span class="n">num_nodes</span> <span class="c1"># same as above</span>
+
+    <span class="c1"># dump yaml file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;run.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># sort_keys=False will prevent the reordering of the keys</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;template config file modified to run.yaml&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Running nequip-train with </span><span class="si">{</span><span class="n">num_nodes</span><span class="si">}</span><span class="s1"> nodes and </span><span class="si">{</span><span class="n">num_gpu</span><span class="si">}</span><span class="s1"> GPUs per node&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Generate the submission script</span>
+    <span class="n">generate_submission_script</span><span class="p">(</span><span class="n">cluster_name</span><span class="p">,</span> <span class="n">num_nodes</span><span class="p">,</span> <span class="n">num_gpu</span><span class="p">)</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;sbatch job_nequip_</span><span class="si">{</span><span class="n">cluster_name</span><span class="si">}</span><span class="s1">.sh&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">currloc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-nequip-sh admonition">
+<p class="admonition-title">nequip.sh</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="nv">DATABASEPATH</span><span class="o">=</span>/pscratch/sd/z/zhe1/IM_surf_prod_NequIP/datasets/dataset_2048
+<span class="nv">CONFIG_TEMPLATE</span><span class="o">=</span>~/template.yaml
+<span class="nv">NUM_GPU</span><span class="o">=</span><span class="m">4</span>
+<span class="nv">NUM_NODES</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">WANDB_PROJECT_NAME</span><span class="o">=</span>IM_dataset_1024
+<span class="nv">CLUSTER_NAME</span><span class="o">=</span>perlmutter
+
+run_nequip_multiGPU.py<span class="w"> </span>--database_path<span class="w"> </span><span class="nv">$DATABASEPATH</span><span class="w"> </span>--config_template<span class="w"> </span><span class="nv">$CONFIG_TEMPLATE</span><span class="w"> </span>--num_gpu<span class="w"> </span><span class="nv">$NUM_GPU</span><span class="w"> </span>--num_nodes<span class="w"> </span><span class="nv">$NUM_NODES</span><span class="w"> </span>--wandb_project_name<span class="w"> </span><span class="nv">$WANDB_PROJECT_NAME</span><span class="w"> </span>--cluster_name<span class="w"> </span><span class="nv">$CLUSTER_NAME</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are using multiple GPU nodes, you need to add <code class="code docutils literal notranslate"><span class="pre">srun</span></code> in the submission script. The reason is illustrated in <a class="reference external" href="https://https://github.com/pytorch/pytorch/issues/76069">here</a> and <a class="reference external" href="https://github.com/YunchaoYang/Blogs/issues/3">here</a>.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="deploy-the-trained-model">
+<h2>Deploy the trained model<a class="headerlink" href="#deploy-the-trained-model" title="Link to this heading">#</a></h2>
+<p>Here’s the command for deploying the trained model:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nequip-deploy<span class="w"> </span>build<span class="w"> </span>--train-dir<span class="w"> </span>path/to/training/session/<span class="w"> </span>where/to/put/deployed_model.pth
+</pre></div>
+</div>
+</section>
+<section id="evaluate-the-trained-model">
+<h2>Evaluate the trained model<a class="headerlink" href="#evaluate-the-trained-model" title="Link to this heading">#</a></h2>
+<p>Here’s the script for evaluating the accuracy of predicting total energy for a trained NequIP model.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span> <span class="nn">nequip.ase</span> <span class="kn">import</span> <span class="n">NequIPCalculator</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">calculate_rmse</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="c1"># Ensure both lists have the same structure</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sublist1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">sublist2</span><span class="p">)</span> <span class="k">for</span> <span class="n">sublist1</span><span class="p">,</span> <span class="n">sublist2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)),</span> <span class="s2">&quot;Lists must have the same structure.&quot;</span>
+
+    <span class="c1"># Initialize sum of squared differences</span>
+    <span class="n">total_squared_diff</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total_elements</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Loop through both lists</span>
+    <span class="k">for</span> <span class="n">sublist1</span><span class="p">,</span> <span class="n">sublist2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">val1</span><span class="p">,</span> <span class="n">val2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sublist1</span><span class="p">,</span> <span class="n">sublist2</span><span class="p">):</span>
+            <span class="n">total_squared_diff</span> <span class="o">+=</span> <span class="p">(</span><span class="n">val1</span> <span class="o">-</span> <span class="n">val2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="n">total_elements</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Calculate RMSE</span>
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">total_squared_diff</span> <span class="o">/</span> <span class="n">total_elements</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rmse</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+<span class="n">lst_atoms</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;test.xyz&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+<span class="n">nequip_calc</span> <span class="o">=</span> <span class="n">NequIPCalculator</span><span class="o">.</span><span class="n">from_deployed_model</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s1">&#39;location_to_deployed_model.pth&#39;</span><span class="p">)</span>
+
+<span class="n">lst_e_dft</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lst_e_nequip</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">lst_f_dft</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lst_f_nequip</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">atoms</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">lst_atoms</span><span class="p">):</span>
+    <span class="n">lst_e_dft</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
+    <span class="n">lst_f_dft</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_forces</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># reset the calculation</span>
+    <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">nequip_calc</span>
+    <span class="n">lst_e_nequip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">())</span>
+    <span class="n">lst_f_nequip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_forces</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">np_e_dft</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lst_e_dft</span><span class="p">)</span>
+<span class="n">np_e_nequip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lst_e_nequip</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">np_e_dft</span><span class="p">,</span> <span class="n">np_e_nequip</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The RMSE between forces is: </span><span class="si">{</span><span class="n">calculate_rmse</span><span class="p">(</span><span class="n">lst_f_dft</span><span class="p">,</span><span class="w"> </span><span class="n">lst_f_nequip</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you want to use NequIP as a force field, you can link it with LAMMPS code.</p>
+</section>
+<section id="common-errors-and-how-to-fix-them">
+<h2>Common errors and how to fix them<a class="headerlink" href="#common-errors-and-how-to-fix-them" title="Link to this heading">#</a></h2>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>torch.distributed.DistBackendError: [3] is setting up NCCL communicator and retrieving ncclUniqueId from [0] via c10d key-value store by key ‘0’, but store-&gt;get(‘0’) got error: Socket Timeout</p>
+</div>
+<p>This error happens when I’m using multiple GPUs to execute the <code class="code docutils literal notranslate"><span class="pre">NequIP</span></code> code. For example, if I’m training on 4096 systems on 4 GPUs, it runs well,</p>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>torch.distributed.DistStoreError: Timed out after 901 seconds waiting for clients. 1/2 clients joined.</p>
+</div>
+<p>This error happens when I’m trying to use multiple GPU nodes (e.g. 2 nodes, 8 GPUs per node) to train the model.</p>
+<p>Both cases are related to the NCCL communicator. They are resolved by using the submission script above, which sets up the NCCL communicator correctly. The script works both for Perlmutter and Kestrel.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="NequIP_theory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Theoretical background of NequIP</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="NequIP_test.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Test of NequIP</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-nequip">Install NequIP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-for-an-interactive-mode-on-supercomputer">Apply for an interactive mode on supercomputer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-training-data-for-nequip">Generating training data for NequIP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-the-config-file">Modify the config file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-nequip-model">Training a NequIP model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-one-gpu">Using one GPU</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-multiple-gpus">Using multiple GPUs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#job-script-on-perlmutter">Job script on Perlmutter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#job-script-on-kestrel">Job script on Kestrel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-scripts-for-generating-input-files-for-nequip">Useful scripts for generating input files for NequIP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-the-trained-model">Deploy the trained model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-the-trained-model">Evaluate the trained model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-errors-and-how-to-fix-them">Common errors and how to fix them</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Zhengda He
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Zhengda He.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
