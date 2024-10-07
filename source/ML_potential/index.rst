@@ -37,7 +37,7 @@ Global optimization
 In below are the table of contents for my notes on machine learning potential.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1 
    :caption: Machine learning potential:
 
    NequIP/NequIP

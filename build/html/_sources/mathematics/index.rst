@@ -1,2 +1,0 @@
-Wonder garden of mathematics
-============================
